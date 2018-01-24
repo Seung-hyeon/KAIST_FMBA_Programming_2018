@@ -3,17 +3,16 @@ clc;
 
 % 2D Brownian Motion Plot
 
-N = 1000;
+N = 500;
 sigma = 0.1;
 
-x = zeros(1, N);
-y = zeros(1, N);
+x = zeros(N);
+y = zeros(N);
 
-for j = 1:N
-    for i = 1:N
-        x(i+1, j) = x(i,j) + sigma*randn();
-        y(i+1, j) = y(i,j) + sigma*randn();
-    end
+
+for i = 1:N
+    x(i+1) = x(i) + sigma*randn();
+    y(i+1) = y(i) + sigma*randn();
 end
 
 % Animation
